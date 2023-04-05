@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>XYZ Technical Tools</Name>
+		<Assembly>C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\bin\Debug\xyzTechnicalRevit.dll</Assembly>
+		<AddInId>
+			c3d94af6-4ebf-41ce-9dac-1372135db5ab
+		</AddInId>
+		<FullClassName>xyzTechnicalRevit.MainClass</FullClassName>
+		<VendorId>BIM_Manager</VendorId>
+		<VendorDescription>Dodzi</VendorDescription>
+	</AddIn>
+</RevitAddIns>

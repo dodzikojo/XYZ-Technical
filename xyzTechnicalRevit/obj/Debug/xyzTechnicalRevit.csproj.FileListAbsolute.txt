@@ -1,0 +1,7 @@
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\bin\Debug\xyzTechnicalRevit.dll
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\bin\Debug\xyzTechnicalRevit.pdb
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Debug\xyzTechnicalRevit.csproj.AssemblyReference.cache
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Debug\xyzTechnicalRevit.csproj.CoreCompileInputs.cache
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Debug\xyzTechnicalRevit.dll
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Debug\xyzTechnicalRevit.pdb
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Debug\xyzTechnicalRevit.g.resources
