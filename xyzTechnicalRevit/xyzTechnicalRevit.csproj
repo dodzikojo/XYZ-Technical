@@ -67,12 +67,13 @@
     <Resource Include="resources\icon-32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="commands\assets\unassign.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <EmbeddedResource Include="resources\unassign.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>xcopy /Y  /F "$(ProjectDir)xyzTechnicalAddin.addin" "C:\ProgramData\Autodesk\Revit\Addins\2023\"</PreBuildEvent>
+    <PreBuildEvent>xcopy /Y  /F "$(ProjectDir)xyzTechnicalAddin.addin" "C:\ProgramData\Autodesk\Revit\Addins\2023\"
+xcopy /Y  /F "$(ProjectDir)\resources\unassign.txt" "$(OutDir)\resources\"</PreBuildEvent>
   </PropertyGroup>
 </Project>

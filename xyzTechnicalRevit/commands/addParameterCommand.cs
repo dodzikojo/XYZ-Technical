@@ -135,7 +135,7 @@ namespace xyzTechnicalRevit.commands
 
         public static List<string> getListOfCategories()
         {
-            string filePath = @"D:\Downloads\metdata\unassign.txt";
+            string filePath = Path.GetDirectoryName( Assembly.GetExecutingAssembly().Location) + @"\resources\unassign.txt";
             List<string> lines = new List<string>();
 
             try

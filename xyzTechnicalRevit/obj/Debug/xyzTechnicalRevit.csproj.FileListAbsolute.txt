@@ -5,3 +5,4 @@ C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Debug\xyzTechnic
 C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Debug\xyzTechnicalRevit.dll
 C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Debug\xyzTechnicalRevit.pdb
 C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Debug\xyzTechnicalRevit.g.resources
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\bin\Debug\resources\unassign.txt
