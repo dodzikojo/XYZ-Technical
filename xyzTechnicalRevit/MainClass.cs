@@ -29,7 +29,6 @@ namespace xyzTechnicalRevit
             //Create tab on revit UI
             application.CreateRibbonTab(tabName);
 
-
             // Add a new ribbon panel
             RibbonPanel ribbonPanel = application.CreateRibbonPanel(tabName, "XYZ Tools");
 
