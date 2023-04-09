@@ -1,0 +1,4 @@
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalNavisworks\bin\Navisworks2023Debug\xyzTechnicalNavisworks.dll
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalNavisworks\obj\Navisworks2023Debug\xyzTechnicalNavisworks.csproj.AssemblyReference.cache
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalNavisworks\obj\Navisworks2023Debug\xyzTechnicalNavisworks.csproj.CoreCompileInputs.cache
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalNavisworks\obj\Navisworks2023Debug\xyzTechnicalNavisworks.dll

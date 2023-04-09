@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\xyzTechnical",
-    "\\xyzTechnical\\bin",
-    "\\xyzTechnical\\obj",
-    "\\xyzTechnical\\Properties"
+    "\\xyzTechnicalNavisworks"
   ],
-  "SelectedNode": "\\xyzTechnical\\xyzTechnical.csproj",
+  "SelectedNode": "\\xyzTechnicalNavisworks\\xyzTechnicalNavisworks.csproj.user",
   "PreviewInSolutionExplorer": false
 }

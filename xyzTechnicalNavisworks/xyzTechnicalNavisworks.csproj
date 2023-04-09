@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{542285C8-3728-49E0-95FD-C75546A6CE96}</ProjectGuid>
+    <ProjectGuid>{17E78642-329D-4FDB-AFA0-A75483BFC1D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>xyzTechnicalRevit</RootNamespace>
-    <AssemblyName>xyzTechnicalRevit</AssemblyName>
+    <RootNamespace>xyzTechnicalNavisworks</RootNamespace>
+    <AssemblyName>xyzTechnicalNavisworks</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Revit2023Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -32,16 +32,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Navisworks2023Debug|AnyCPU'">
     <OutputPath>bin\Navisworks2023Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="RevitAPI">
-      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2023\RevitAPI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="RevitAPIUI">
-      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2023\RevitAPIUI.dll</HintPath>
+    <Reference Include="Autodesk.Navisworks.Api">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Navisworks Manage 2023\Autodesk.Navisworks.Api.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -53,31 +48,17 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="commands\exportGeometryCommand.cs" />
-    <Compile Include="commands\addParameterCommand.cs" />
-    <Compile Include="commands\getList3dViewsCommand.cs" />
-    <Compile Include="commands\metadataExportCommand.cs" />
     <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="xyzTechnicalAddin.addin" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\icon-16.png" />
-    <Resource Include="resources\icon-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="resources\unassign.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>xcopy /Y  /F "$(ProjectDir)xyzTechnicalAddin.addin" "C:\ProgramData\Autodesk\Revit\Addins\2023\"
-xcopy /Y  /F "$(ProjectDir)\resources\unassign.txt" "$(OutDir)\resources\"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y /F "$(TargetDir)*.*" "C:\Program Files\Autodesk\Navisworks Manage 2023\Plugins\$(TargetName)\"</PostBuildEvent>
   </PropertyGroup>
 </Project>

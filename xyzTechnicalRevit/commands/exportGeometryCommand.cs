@@ -15,6 +15,7 @@ using View = Autodesk.Revit.DB.View;
 
 namespace xyzTechnicalRevit.commands
 {
+    //To export the selected element’s geometry to OBJ or SVF format.
     [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
     public class exportGeometryCommand : IExternalCommand
     {
@@ -22,19 +23,14 @@ namespace xyzTechnicalRevit.commands
         {
             // Get the current document
             Document doc = commandData.Application.ActiveUIDocument.Document;
-
             View activeView = commandData.Application.ActiveUIDocument.ActiveView;
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-
             string fullPath = string.Empty;
-
             string fileName = string.Empty;
 
             saveFileDialog.Filter = "Obj files (*.obj)|*.obj";
 
-            
-            
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string selectedPath = Path.GetDirectoryName(saveFileDialog.FileName);
@@ -64,8 +60,6 @@ namespace xyzTechnicalRevit.commands
                   .FirstOrDefault(x => x.ViewFamily == ViewFamily.ThreeDimensional);
 
                 View3D view3D = null;
-
-                UIDocument uidoc = commandData.Application.ActiveUIDocument;
 
                 using (Transaction t = new Transaction(doc, "Create Temporary View and Export OBJ"))
                 {
@@ -100,9 +94,6 @@ namespace xyzTechnicalRevit.commands
 
                 options.ViewId = viewID;
 
-                // Create the file name
-                //string fileName = "selected_elements_5.obj";
-
                 // Export the selected elements to the OBJ file
                 doc.Export(fullPath, fileName, options);
 
@@ -125,53 +116,9 @@ namespace xyzTechnicalRevit.commands
                 TaskDialog.Show("Info", "Export Cancelled");
             }
 
-
-            
-
-
             return Result.Succeeded;
         }
 
-        //public void ExportToObj(Element element, string filePath)
-        //{
-        //    Document doc = element.Document;
-
-        //    OBJExportOptions oBJExportOptions = new OBJExportOptions();
-
-        //    GeometryElement geometryElement = element.get_Geometry(new Options());
-        //    if (geometryElement == null) return;
-
-        //    // Create a new OBJ file
-        //    using (StreamWriter writer = new StreamWriter(filePath))
-        //    {
-        //        foreach (GeometryObject geoObj in geometryElement)
-        //        {
-        //            // Export only solid geometry
-        //            if (geoObj is Solid solid && solid.Volume > 0)
-        //            {
-        //                // Export each face of the solid geometry
-        //                foreach (Face face in solid.Faces)
-        //                {
-        //                    Mesh mesh = face.Triangulate();
-        //                    if (mesh == null) continue;
-
-        //                    // Export the vertices of the mesh
-        //                    foreach (XYZ vertex in mesh.Vertices)
-        //                    {
-        //                        writer.WriteLine("v {0} {1} {2}", vertex.X, vertex.Y, vertex.Z);
-        //                    }
-
-        //                    // Export the indices of the mesh triangles
-        //                    for (int i = 0; i < mesh.NumTriangles; i++)
-        //                    {
-        //                        MeshTriangle triangle = mesh.get_Triangle(i);
-        //                        writer.WriteLine("f {0} {1} {2}", triangle.VertexIndex1 + 1, triangle.VertexIndex2 + 1, triangle.VertexIndex3 + 1);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
 
     }
 }

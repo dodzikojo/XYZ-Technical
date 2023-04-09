@@ -1,0 +1,6 @@
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalNavisworks\bin\Release\xyzTechnicalNavisworks.dll
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalNavisworks\bin\Release\xyzTechnicalNavisworks.pdb
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalNavisworks\obj\Release\xyzTechnicalNavisworks.csproj.AssemblyReference.cache
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalNavisworks\obj\Release\xyzTechnicalNavisworks.csproj.CoreCompileInputs.cache
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalNavisworks\obj\Release\xyzTechnicalNavisworks.dll
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalNavisworks\obj\Release\xyzTechnicalNavisworks.pdb
