@@ -8,14 +8,10 @@ using wf = System.Windows.Forms;
 // Navisworks API References
 using Autodesk.Navisworks.Api;
 using Autodesk.Navisworks.Api.Plugins;
-using Autodesk.Navisworks.Api.DocumentParts;
 using System.Windows.Forms;
 using Application = Autodesk.Navisworks.Api.Application;
-using System.Windows.Controls;
-using System.Windows.Media;
 using System.Diagnostics;
 using System.IO;
-
 
 //To display the origin coordinates of the model in a pop-up message box/dialog.
 //To create a text file containing the element ID of all the elements in the model
@@ -54,13 +50,10 @@ namespace xyzTechnicalNavisworks
                     CreateTextFile();
                     break;
                 case "Button_Three":
-                    MessageBox.Show("In three words I can sum up everything I've learned" +
-                        " about life: it goes on.\n-Robert Frost",
-                        "Sample - Button Three");
+                    
                     break;
                 case "Button_Four":
-                    MessageBox.Show("Four things for success: work and pray, " +
-                        "think and believe.\n-Norman Vincent Peale", "Sample - Button Four");
+                    
                     break;
             }
             return 0;
@@ -90,7 +83,6 @@ namespace xyzTechnicalNavisworks
             Document doc = Autodesk.Navisworks.Api.Application.ActiveDocument;
             var items = doc.Models.RootItems.ToList();
 
-            string path = "D:\\Downloads\\metdata\\element_ids.txt";
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             string fullPath = string.Empty;
@@ -166,16 +158,11 @@ namespace xyzTechnicalNavisworks
         }
 
 
-        public void ExportSelectedElementsGeometryToObj()
-        {
-            var selection = Autodesk.Navisworks.Api.Application.ActiveDocument.CurrentSelection.SelectedItems;
-            var exporter = new NwExportOptions();
-            exporter.ExportSelected = true;
-            exporter.ExportGeometry = true;
-            exporter.ExportFormat = NwExportFormat.NwExportFormat_OBJ;
-            exporter.ExportFilePath = Path.Combine(Path.GetTempPath(), "selected_elements.obj");
-            Autodesk.Navisworks.Api.Application.ActiveDocument.Export(FileType.NWEXPORTOPTIONS, exporter);
-        }
+
+
+
+
+
 
 
 
