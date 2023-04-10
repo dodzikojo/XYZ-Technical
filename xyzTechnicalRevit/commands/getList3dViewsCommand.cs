@@ -10,6 +10,7 @@ using System.Windows.Controls;
 
 namespace xyzTechnicalRevit.commands
 {
+    //To list all the 3D views in the active project.
     [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.ReadOnly)]
     public class getList3dViewsCommand : IExternalCommand
     {

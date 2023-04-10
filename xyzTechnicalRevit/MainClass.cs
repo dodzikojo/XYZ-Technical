@@ -20,7 +20,6 @@ namespace xyzTechnicalRevit
     //To export the selected element’s geometry to OBJ or SVF format.
     public class MainClass : IExternalApplication
     {
-
         public Result OnStartup(UIControlledApplication application)
         {
             //Add Tab to Revit UI
@@ -65,13 +64,13 @@ namespace xyzTechnicalRevit
             };
 
 
-            PushButton getList3dViewsBtn = ribbonPanel.AddItem(getList3dViewsBtnData) as PushButton;
+            _= ribbonPanel.AddItem(getList3dViewsBtnData) as PushButton;
             ribbonPanel.AddSeparator();
-            PushButton metadataExportBtn = ribbonPanel.AddItem(metadataExportBtnData) as PushButton;
+            _= ribbonPanel.AddItem(metadataExportBtnData) as PushButton;
             ribbonPanel.AddSeparator();
-            PushButton addParameterBtn = ribbonPanel.AddItem(addParameterBtnData) as PushButton;
+            _ = ribbonPanel.AddItem(addParameterBtnData) as PushButton;
             ribbonPanel.AddSeparator();
-            PushButton exportGeometryBtn = ribbonPanel.AddItem(exportGeometryBtnData) as PushButton;
+            _ = ribbonPanel.AddItem(exportGeometryBtnData) as PushButton;
 
 
             return Result.Succeeded;

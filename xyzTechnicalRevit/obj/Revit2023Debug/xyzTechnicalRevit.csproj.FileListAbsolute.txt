@@ -1,0 +1,8 @@
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\bin\Debug\resources\unassign.txt
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\bin\Debug\xyzTechnicalRevit.dll
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\bin\Debug\xyzTechnicalRevit.pdb
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Revit2023Debug\xyzTechnicalRevit.csproj.AssemblyReference.cache
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Revit2023Debug\xyzTechnicalRevit.g.resources
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Revit2023Debug\xyzTechnicalRevit.csproj.CoreCompileInputs.cache
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Revit2023Debug\xyzTechnicalRevit.dll
+C:\Users\dodzi\source\repos\XYZ-Technical\xyzTechnicalRevit\obj\Revit2023Debug\xyzTechnicalRevit.pdb

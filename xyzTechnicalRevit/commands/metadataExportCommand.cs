@@ -2,11 +2,15 @@
 using Autodesk.Revit.UI;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Forms;
+using System.Xml.Linq;
+using View = Autodesk.Revit.DB.View;
 
 namespace xyzTechnicalRevit.commands
 {
@@ -32,42 +36,69 @@ namespace xyzTechnicalRevit.commands
             FilteredElementCollector collector = new FilteredElementCollector(doc);
             collector.OfClass(typeof(View3D));
             List<View3D> views = collector.Cast<View3D>().ToList();
-            
 
-            foreach (View view in views)
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            folderBrowserDialog1.Description = "Select or create new folder to save the file(s)";
+
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                if (!view.IsTemplate)
+                string folderPath = string.Empty;
+                folderPath = folderBrowserDialog1.SelectedPath;
+
+                try
                 {
-                    string fileName = view.Name + ".txt";
-                    string filePath = @"D:\Downloads\metdata\" + fileName;
-
-                    using (StreamWriter sw = File.CreateText(filePath))
+                    foreach (View view in views)
                     {
-                        sw.WriteLine("Metadata for View: " + view.Name);
-                        sw.WriteLine("");
-
-                        FilteredElementCollector viewCollector = new FilteredElementCollector(doc, view.Id);
-                        ICollection<ElementId> elementIds = viewCollector.ToElementIds();
-
-
-                        foreach (ElementId elementId in elementIds)
+                        if (!view.IsTemplate)
                         {
-                            Element element = doc.GetElement(elementId);
+                            string fileName = view.Name + ".txt";
 
-                            if (element.Category != null)
+                            using (StreamWriter sw = File.CreateText(Path.Combine(folderPath, fileName)))
                             {
-                                string metadata = "Element ID: " + elementId.IntegerValue.ToString() + ", Layer Name: " + element.Category.Name.ToString();
-                                sw.WriteLine(metadata);
+                                sw.WriteLine("Metadata for View: " + view.Name);
+                                sw.WriteLine("");
+
+                                FilteredElementCollector viewCollector = new FilteredElementCollector(doc, view.Id);
+                                ICollection<ElementId> elementIds = viewCollector.ToElementIds();
+
+                                // Loop through all elements and extract their parameters
+                                foreach (ElementId elementId in elementIds)
+                                {
+                                    Element element = doc.GetElement(elementId);
+
+                                    // Get the element's parameters
+                                    ParameterSet parameters = element.Parameters;
+
+                                    // Loop through all parameters and extract their values
+                                    foreach (Parameter parameter in parameters)
+                                    {
+                                        string paramName = parameter.Definition.Name;
+                                        string paramValue = parameter.AsValueString();
+
+                                        // Do something with the parameter name and value
+                                        //Debug.WriteLine("Element ID: {0}, Parameter Name: {1}, Parameter Value: {2}", element.Id.ToString(), paramName, paramValue);
+                                        sw.WriteLine("Element ID: {0}, Parameter Name: {1}, Parameter Value: {2}", element.Id.ToString(), paramName, paramValue);
+                                    }
+                                }
+
                             }
-                            else
-                            {
-                                
-                            }
-                            
+
+
                         }
+
+
                     }
                 }
-                
+                catch (UnauthorizedAccessException unAuthExp)
+                {
+                    TaskDialog.Show("Info", unAuthExp.Message);
+                }
+                catch (Exception ex) 
+                { 
+                    Debug.WriteLine(ex.ToString()); 
+                }
+
+
             }
         }
     }
